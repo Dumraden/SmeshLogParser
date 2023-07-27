@@ -72,7 +72,7 @@ $verticalLine Found Proof: {5,-61}$verticalLine
 $verticalLine Proof Submitted: {9,-57}$verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
 $verticalLine Current Epoch: {6,-58} $verticalLine
-$verticalLine Rewards Expected Epoch: {7,-55} $verticalLine
+$verticalLine Rewards Expected Epoch: {7,-49} $verticalLine
 $verticalLine Next Proof Submission Window: {8,-43} $verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
