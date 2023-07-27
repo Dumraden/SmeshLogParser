@@ -8,7 +8,7 @@ function GetLogInfo {
     $appVersion = ($logContent | Select-String -Pattern 'App version:\s+(v\d+\.\d+\.\d+)').Matches.Groups[1] | Select-Object -Last 1
     $genProof = if ($logContent -match 'generating proof with PoW') { 'Done' } else { 'x' }
     $lfProof = if ($logContent -match 'calculating proof of work for nonces') { 'Done' } else { 'x' }
-    $foundproof = if ($logContent -match 'Found proof for nonce') { 'Done!' } else { ':(' }
+    $foundproof = if ($logContent -match 'Found proof for nonce') { 'Done!' } else { 'x' }
     $corruptedPost = if ($logContent -match 'verify PoST: invalid proof') { 'CORRUPTED POST REPORTED' } else { 'None found' }
     $submittedproof = if ($logContent -match 'submitted to poet proving service ') { 'Done!' } else { 'x' }
 
@@ -72,7 +72,7 @@ $verticalLine Found Proof: {5,-61}$verticalLine
 $verticalLine Proof Submitted: {9,-57}$verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
 $verticalLine Current Epoch: {6,-58} $verticalLine
-$verticalLine When Coin? Epoch: {7,-55} $verticalLine
+$verticalLine Rewards Expected Epoch: {7,-55} $verticalLine
 $verticalLine Next Proof Submission Window: {8,-43} $verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
 $verticalLine$("{0,-75}" -f " ")$verticalLine
