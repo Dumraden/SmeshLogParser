@@ -7,7 +7,7 @@ This version is mainly set up for the SMapp. If you need this for go-spacemesh, 
 
 Example of a powershell script to get go-spacemesh to capture logs:
 
-```.\go-spacemesh --listen /ip4/0.0.0.0/tcp/7513 --config .\{configfolder}\config-metrics.json 2>&1 | Tee-Object -FilePath "C:\Users\user\Spacemesh\log.txt" -Append```
+```.\go-spacemesh --listen /ip4/0.0.0.0/tcp/7513 --config .\{configfolder}\config-metrics.json 2>&1 | Tee-Object -FilePath "C:\Users\{user}\Spacemesh\log.txt" -Append```
 
 Once that is running, ensure logs are actually being captured. To be extra sure the -Append command is doing its job, run the script, CTRL+C to stop it and run again. You should have "Welcome to Spacemesh. Spacemesh full node is starting..." mentioned twice in the log.
 
