@@ -23,3 +23,30 @@ Once that is running, ensure logs are actually being captured. To be extra sure 
 Once that's OK, you can run the SmeshLogParser script to provide you with the information it's set to extract.
 
 Please note that the parser will only return information that your logs currently have. If the necessary information on the logs isn't there, it defaults to a negative/false state.
+
+What you will get is a window similar to the below:
+![image](https://github.com/Dumraden/SmeshLogParser/assets/140160132/b2eec966-6f6c-4f99-85f2-e2a451996b39)
+
+There is a 5 second refresh for the overlay, if you wish to extend that, simply change the value in the ```Start-Sleep Seconds 5``` section to one of your liking.
+
+Overlay information explained
+-
+App version is the go-spacemesh app version.
+Generating Proof happens right at the beggining of the Gap Cycle (Start of the Proof Submission Window).
+Looking for Proof includes both k2pow and the Nonce scan. Expect this to take anywhere from 1 to 12 hours.
+Found Proof. Self explanatory really.
+Proof Submitted. Your node was able to submit the proof to the network and is now eligible for rewards
+
+Current Epoch: The current epoch we're in.
+Rewards Expected Epoch: The Epoch you should be expecting to see rewards. 
+Next Proof Submission Window - Tne next time your node becomes to start the process of generating a proof and submitting it begins.
+
+Post Files initialized: The amount of files your node has been able to scan. Default is 2GB per file, so 2GB*1024 nets us a 2TiB post.
+POST Corruption: Scans for any mentions of a corrupted POST. If there is one, the screen will turn red. In most occasions this calls for a verification of the POST using the tools from the Spacemesh team, but it's quite definitely a rebuild of the entire POST.
+
+At the bottom you've got the NodeID so you can identify each node you have on. Especially useful for monitoring CLI nodes.
+
+
+
+
+
