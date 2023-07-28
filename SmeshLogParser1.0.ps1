@@ -16,14 +16,16 @@ function GetLogInfo {
     $identityLine = $logContent | Select-String -Pattern 'Loaded existing identity' | Select-Object -Last 1
     $identity = if ($identityLine) { $identityLine.Line.Substring($identityLine.Line.Length - 64) } else { 'Not Found' }
 
-    # Extract Current Epoch, Target Epoch, and Poet Round End
-    $currentEpoch = 0
+    # Calculate the current epoch based on the start date and current date
+    $startDate = Get-Date "2023-07-28T08:00:00Z"  # Start date and time in UTC
+    $currentDate = Get-Date
+    $daysPassed = ($currentDate - $startDate).Days
+    $currentEpoch = 1 + [math]::Floor($daysPassed / 14)
+
+    # Extract Target Epoch and Poet Round End
     $targetEpoch = 0
     $poetRoundEnd = 'N/A'
     foreach ($line in $logContent -split '\r?\n') {
-        if ($line -match '"current epoch": "(\d+)"') {
-            $currentEpoch = [int]$matches[1]
-        }
         if ($line -match '"target epoch": "(\d+)"') {
             $targetEpoch = [int]$matches[1]
         }
@@ -31,7 +33,7 @@ function GetLogInfo {
             $poetRoundEnd = Get-Date $matches[1] -Format "dd-MM-yyyy HH:mm"
         }
         if ($line -match 'initialization: file already initialized.*"fileIndex": (\d+)') {
-            $postfiles = [int]$matches[1]+1
+            $postfiles = [int]$matches[1] + 1
         }
     }
 
