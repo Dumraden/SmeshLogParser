@@ -8,7 +8,7 @@ For bug reports, suggestions, or contributions, feel free to ping me a DM on Dis
 
 Functionality
 -
-Reads logs from go-spacemesh and returns a dashboard with the important bits. Can be adopted by changing the location of the logs.
+Reads logs from go-spacemesh and returns a dashboard with the important bits. Can be can be adopted to read off SMapp logs by changing the location at the bottom of the file.
 
 Windows only at this point.
 
