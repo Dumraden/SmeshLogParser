@@ -27,7 +27,7 @@ Please note that the parser will only return information that your logs currentl
 What you will get is a window similar to the below:
 ![image](https://github.com/Dumraden/SmeshLogParser/assets/140160132/06f9c706-a83d-4ce8-9f9c-29847f6f069f)
 
-There is a 5 second refresh for the overlay, if you wish to extend that, simply change the value in the ```Start-Sleep Seconds 5``` section to one of your liking.
+There is a 0.51 second refresh for the overlay, if you wish to extend that, simply change the value in the ```Start-Sleep -Seconds 0.51``` section to one of your liking.
 
 Overlay information explained
 -
