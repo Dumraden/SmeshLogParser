@@ -25,27 +25,35 @@ Once that's OK, you can run the SmeshLogParser script to provide you with the in
 Please note that the parser will only return information that your logs currently have. If the necessary information on the logs isn't there, it defaults to a negative/false state.
 
 What you will get is a window similar to the below:
-![image](https://github.com/Dumraden/SmeshLogParser/assets/140160132/26074ee3-a0f3-4199-b37b-e5a8a6d9fec6)
-
+![image](https://github.com/Dumraden/SmeshLogParser/assets/140160132/06f9c706-a83d-4ce8-9f9c-29847f6f069f)
 
 There is a 5 second refresh for the overlay, if you wish to extend that, simply change the value in the ```Start-Sleep Seconds 5``` section to one of your liking.
 
 Overlay information explained
 -
 1. App version is the go-spacemesh app version.
-2. Generating Proof happens right at the beggining of the Gap Cycle (Start of the Proof Submission Window).
-3. Looking for Proof includes both k2pow and the Nonce scan. Expect this to take anywhere from 1 to 12 hours.
-4. Found Proof. Self explanatory really.
-5. Proof Submitted. Your node was able to submit the proof to the network and is now eligible for rewards
+2. Synced: Shows whether the node is synced with the Spacemesh network.
+3. Peers: The amount of nodes you're connected to.
+4. Top Layer: The current top layer of the network
+5. Synced Layer: The layer that you're node is synced on.
+6. Verified layer: The layer the node has verified rewards for.
+7. Generating Proof happens right at the beggining of the Gap Cycle (Start of the Proof Generation/Submission Window).
+8. Looking for Proof includes both k2pow and the Nonce scan. This can take quite some time, depends on system specs as well as PoST Size/Nonce count.
+9. Proof Submitted. Your node was able to submit the proof to the network and is now eligible for rewards
+10. Found proof in PoST in: The total amount of time it took for your Node to find a Proof in the PoST. Anything below 10 hours is considered "safe".
+   
+11. Current Epoch: The current epoch we're in.
+12. Rewards Expected Epoch: The Epoch you should be expecting to see rewards.
+13. Next Proof Generation Window - Tne next time your node becomes to start the process of generating a proof and searching for it in the PoST
+14. Next Proof Submission Window - Starts on the 11th hour of the 12 hour Cycle Gap. 
 
-6. Current Epoch: The current epoch we're in.
-7. Rewards Expected Epoch: The Epoch you should be expecting to see rewards. 
-8. Next Proof Submission Window - Tne next time your node becomes to start the process of generating a proof and submitting it begins.
+15. CPU Usage: Current CPU Usage (take it with a pinch of salt)
+16. HDD Read Speed (live read speed. useful for Proof Generation)
 
-9. Post Files initialized: The amount of files your node has been able to scan. Default is 2GB per file, so 2GB*1024 nets us a 2TiB post.
-10. POST Corruption: Scans for any mentions of a corrupted POST. If there is one, the screen will turn red. In most occasions this calls for a verification of the POST using the tools from the Spacemesh team, but it's quite definitely a rebuild of the entire POST.
+17. Post Files initialized: The amount of files your node has been able to scan. Default is 2GB per file, so 2GB*1024 nets us a 2TiB post.
+18. POST Corruption: Scans for any mentions of a corrupted POST. If there is one, the screen will turn red. In most occasions this calls for a verification of the POST using the tools from the Spacemesh team, but it's quite definitely a rebuild of the entire POST.
 
-11. At the bottom you've got the NodeID so you can identify each node you have on. Especially useful for monitoring CLI nodes.
+19. At the bottom you've got the NodeID so you can identify each node you have on.
 
 
 
