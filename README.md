@@ -2,13 +2,13 @@
 Disclaimer:
 **SmeshLogParser is an independent project developed by myself**
 
-Please note that while this project is designed to work with the Windows Spacemesh applications, it remains an independent effort and is not an official product of the Spacemesh team.
+Please note that while this project is designed to work with the Windows Spacemesh CLI node, it remains an independent effort and is not an official product of the Spacemesh team.
 
 For bug reports, suggestions, or contributions, feel free to ping me a DM on Discord
 
 Functionality
 -
-Reads logs from go-spacemesh and returns a dashboard with the important bits. Can be can be adopted to read off SMapp logs by changing the location at the bottom of the file.
+Reads logs from go-spacemesh and returns a dashboard with the important bits.
 
 Windows only at this point.
 
